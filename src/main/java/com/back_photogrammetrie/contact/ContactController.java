@@ -32,9 +32,7 @@ public class ContactController {
 	}
 	
 	@DeleteMapping("{messageId}")
-    public void getUser(@PathVariable("messageId") int messageId) {
-    	if(contactService.allContacts().get(messageId)!=null) {
-    		contactService.allContacts().remove(messageId);
-    	}
+    public void deleteContact(@PathVariable("messageId") int messageId) {
+    	contactService.deleteContact(messageId);
     }
 }

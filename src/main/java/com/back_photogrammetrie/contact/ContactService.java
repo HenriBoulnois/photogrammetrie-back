@@ -27,4 +27,10 @@ public class ContactService {
 		}
 		return contactRepository.save(newContact);		
 	}
+	
+	public void deleteContact(int messageId) {
+		if(contactRepository.findAll().get(messageId)!=null) {
+    		contactRepository.findAll().remove(messageId);
+    	}
+	}
 }
