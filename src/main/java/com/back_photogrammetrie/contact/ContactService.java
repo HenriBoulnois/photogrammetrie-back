@@ -29,8 +29,11 @@ public class ContactService {
 	}
 	
 	public void deleteContact(int messageId) {
-		if(contactRepository.findAll().get(messageId)!=null) {
-    		contactRepository.findAll().remove(messageId);
-    	}
+		List<Contact> listeContacts = contactRepository.findAll();
+		for (Contact contact : listeContacts) {
+			if(contact.getId()==messageId) {
+				contactRepository.delete(contact);
+			}
+		}
 	}
 }
