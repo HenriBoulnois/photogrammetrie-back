@@ -24,7 +24,7 @@ public class ContactController {
 	}
 	
 	@PostMapping
-	@CrossOrigin("http://localhost:3000")
+	@CrossOrigin("https://photogrammetrie-front.herokuapp.com")
 	public Contact addContact(@RequestBody Contact newContact) {
 		return contactService.addContact(newContact);
 	}
