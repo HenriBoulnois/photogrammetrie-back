@@ -31,7 +31,7 @@ public class ContactController {
 		return contactService.addContact(newContact);
 	}
 	
-	@DeleteMapping("{messageId}")
+	@DeleteMapping("/{messageId}")
     public void deleteContact(@PathVariable("messageId") int messageId) {
     	contactService.deleteContact(messageId);
     }
